@@ -248,38 +248,39 @@ var AUGM = (function () {
             duration: _duration._default,
             message: '',
             type: 'info',
-			background: null,
+            background: null,
             direction: 'right',
             verticalAnchorPoint: 'top',
             sticky: false,
-			style: null,
-			setDirection: function(d) {
-				if (isNaN(d) || d < 0 || d > 4) d = 2;
-				
-				if (d === 1) {
-					this.direction = 'left';
-					this.verticalAnchorPoint = 'top';
-				} else if (d === 2) {
-					this.direction = 'right';
-					this.verticalAnchorPoint = 'top';
-				} else if (d === 3) {
-					this.direction = 'right';
-					this.verticalAnchorPoint = 'bottom';
-				} else {
-					this.direction = 'left';
-					this.verticalAnchorPoint = 'bottom';
-				}
-				
-				return this;
-			},
-			setStyle: function(style) {
-				this.style = style;
-				return this;
-			},
-			setBackground: function(background) {
-				this.background = background;
-				return this;
-			},
+            style: null,
+            setDirection: function (d) {
+                if (isNaN(d) || d < 0 || d > 4)
+                    d = 2;
+
+                if (d === 1) {
+                    this.direction = 'left';
+                    this.verticalAnchorPoint = 'top';
+                } else if (d === 2) {
+                    this.direction = 'right';
+                    this.verticalAnchorPoint = 'top';
+                } else if (d === 3) {
+                    this.direction = 'right';
+                    this.verticalAnchorPoint = 'bottom';
+                } else {
+                    this.direction = 'left';
+                    this.verticalAnchorPoint = 'bottom';
+                }
+
+                return this;
+            },
+            setStyle: function (style) {
+                this.style = style;
+                return this;
+            },
+            setBackground: function (background) {
+                this.background = background;
+                return this;
+            },
             setMessage: function (msg) {
                 this.message = msg;
                 return this;
@@ -290,7 +291,7 @@ var AUGM = (function () {
             },
             setSticky: function (sticky) {
                 this.sticky = sticky || false;
-				return this;
+                return this;
             },
             reset: function () {
                 this.message = '';
@@ -303,8 +304,8 @@ var AUGM = (function () {
                         this.duration = duration;
                     }
                 }
-				
-				return this;
+
+                return this;
             },
             show: function () {
                 let $this = this;
@@ -353,11 +354,11 @@ var AUGM = (function () {
                 dom.style.background = this.background ? this.background : bgColor;
                 dom.style.color = 'white';
                 dom.style.visibility = 'hidden';
-				if (this.style && typeof this.style === 'object') {
-					for (let key in this.style) {
-						dom.style.setProperty(key, this.style[key]);
-					}
-				}
+                if (this.style && typeof this.style === 'object') {
+                    for (let key in this.style) {
+                        dom.style.setProperty(key, this.style[key]);
+                    }
+                }
 
                 document.body.append(dom);
                 this.holder.push(dom); // add to holder list
@@ -430,7 +431,7 @@ var AUGM = (function () {
                 }
 
                 this.reset();
-				return this;
+                return this;
             }
         };
 
@@ -449,5 +450,5 @@ var AUGM = (function () {
 })();
 
 if (window.AUGM) {
-	window.$m = AUGM;
+    window.$m = AUGM;
 }
