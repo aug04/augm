@@ -46,16 +46,16 @@ AUGM.getInstance()
 
 And here are some examples about direction
 
-Direction ***1***
+Direction ***1***  
 ![top-left](https://media.giphy.com/media/YlGVTCuGmpPTcuXB2z/giphy.gif)
 
-Direction ***2***
+Direction ***2***  
 ![top-right](https://media.giphy.com/media/W6A2yqGqCZSEURpvHy/giphy.gif)
 
-Direction ***3***
+Direction ***3***  
 ![bottom-right](https://media.giphy.com/media/IgiZU382uo9CH3khL8/giphy.gif)
 
-Direction ***4***
+Direction ***4***  
 ![bottom-left](https://media.giphy.com/media/iF1zHcjjLKZnlRcw1N/giphy.gif)
 
 Coding anything I want to do.
