@@ -253,6 +253,14 @@ var AUGM = (function () {
             verticalAnchorPoint: 'top',
             sticky: false,
             style: null,
+            ttl: 5000,
+            setTTL: function (milliseconds) {
+              if (!isNaN(milliseconds)) {
+                this.ttl = milliseconds;
+              }
+              
+              return this;
+            },
             setDirection: function (d) {
                 if (isNaN(d) || d < 0 || d > 4)
                     d = 2;
@@ -338,7 +346,7 @@ var AUGM = (function () {
                 } else if (this.verticalAnchorPoint === 'bottom') {
                     dom.style.bottom = _bottom + 'px';
                 } else if (this.verticalAnchorPoint === 'center') {
-                    // TODO:
+                    // Ignored
                 } else if (!isNaN(verticalAnchorPoint)) {
                     let topVal = Math.floor(this.verticalAnchorPoint);
                     dom.style.top = topVal + 'px';
@@ -384,7 +392,7 @@ var AUGM = (function () {
 
                         dom.style.bottom = _bottom + 'px';
                     } else if (this.verticalAnchorPoint === 'center') {
-                        // TODO:
+                        // Ignored
                     } else if (!isNaN(verticalAnchorPoint)) {
                         let topVal = Math.floor(this.verticalAnchorPoint);
                         dom.style.top = topVal + 'px';
@@ -398,9 +406,10 @@ var AUGM = (function () {
                 dom.style.visibility = 'visible';
                 move(this.direction, getduration(this.duration), dom, null);
                 if (!this.sticky) {
+                    let timeout = !isNaN(this.ttl) ? this.ttl : 5000;
                     setTimeout(function () {
                         backAndDestroy(dom);
-                    }, 5000);
+                    }, timeout);
                 }
 
                 function backAndDestroy(dom) {
