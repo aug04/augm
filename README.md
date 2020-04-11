@@ -25,6 +25,21 @@ Below are some methods can be easily to use, please read them for more detail.
 `setBackground(backgroundColor)` ***(option)*** set wrapper background color, the **backgroundColor** parameter is a HTML color code, *if this function called to set background => the `setType` function (if set) will be ignored*.
 
 ##### Usage
+Download and include script at the top of head tag is recommended.
+```html
+<html>
+    <head>
+        ...
+        <script type="text/javascript" src="augm.js"></script>
+        ...
+    </head>
+    <body>
+        ...
+    </body>
+</html>
+```
+
+Shown the message.
 ```javascript
 // This is full example and summary explain, the option functions can be ignored.
 AUGM.getInstance()
