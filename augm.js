@@ -1,4 +1,4 @@
-var AUGM = (function () {
+(function () {
     var instance;
     const _top = 40;
     const _right = 40;
@@ -447,7 +447,7 @@ var AUGM = (function () {
         return o;
     }
 
-    return {
+    var AUGM = {
         getInstance: function () {
             if (!instance) {
                 instance = createInstance();
@@ -456,8 +456,9 @@ var AUGM = (function () {
             return instance;
         }
     };
-})();
 
-if (window.AUGM) {
-    window.$m = AUGM;
-}
+    if (!window.AUGM) {
+        window.AUGM = AUGM;
+        window.$m = AUGM;
+    }
+})(window);
