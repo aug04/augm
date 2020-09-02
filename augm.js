@@ -1,4 +1,4 @@
-(function () {
+(function (w) {
     var instance;
     const _top = 40;
     const _right = 40;
@@ -457,8 +457,8 @@
         }
     };
 
-    if (!window.AUGM) {
-        window.AUGM = AUGM;
-        window.$m = AUGM;
+    if (!w.AUGM) {
+        w.AUGM = AUGM;
+        w.$m = AUGM;
     }
 })(window);
